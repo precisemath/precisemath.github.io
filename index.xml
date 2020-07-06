@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Thoughts</title>
-    <link>http://example.org/</link>
+    <link>https://precisemath.github.io/</link>
     <description>Recent content on Thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 03 Jul 2020 22:55:53 -0400</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://precisemath.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>http://example.org/about/</link>
+      <link>https://precisemath.github.io/about/</link>
       <pubDate>Fri, 03 Jul 2020 23:14:31 -0400</pubDate>
       
-      <guid>http://example.org/about/</guid>
+      <guid>https://precisemath.github.io/about/</guid>
       <description>I live in New Jersey. Here are some tags that I can describe myself:
  Dad Environmentalist (Or at least concious about the environment) Crazy Twitter reader Software Developer  </description>
     </item>
     
     <item>
       <title>Death of a Squirrel</title>
-      <link>http://example.org/posts/first-post/</link>
+      <link>https://precisemath.github.io/posts/first-post/</link>
       <pubDate>Fri, 03 Jul 2020 22:55:53 -0400</pubDate>
       
-      <guid>http://example.org/posts/first-post/</guid>
+      <guid>https://precisemath.github.io/posts/first-post/</guid>
       <description>&lt;p&gt;Something I feel bad about.&lt;/p&gt;</description>
     </item>
     

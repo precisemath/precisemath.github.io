@@ -3,42 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/about/</loc>
+    <loc>https://precisemath.github.io/about/</loc>
     <lastmod>2020-07-03T23:14:31-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/posts/first-post/</loc>
+    <loc>https://precisemath.github.io/posts/first-post/</loc>
     <lastmod>2020-07-03T22:55:53-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/tags/environmental/</loc>
+    <loc>https://precisemath.github.io/tags/environmental/</loc>
     <lastmod>2020-07-03T22:55:53-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/tags/personal/</loc>
+    <loc>https://precisemath.github.io/tags/personal/</loc>
     <lastmod>2020-07-03T22:55:53-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/posts/</loc>
+    <loc>https://precisemath.github.io/posts/</loc>
     <lastmod>2020-07-03T22:55:53-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://precisemath.github.io/tags/</loc>
     <lastmod>2020-07-03T22:55:53-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>https://precisemath.github.io/</loc>
     <lastmod>2020-07-03T22:55:53-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://precisemath.github.io/categories/</loc>
   </url>
   
 </urlset>

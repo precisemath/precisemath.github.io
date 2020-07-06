@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>environmental on Thoughts</title>
-    <link>http://example.org/tags/environmental/</link>
+    <link>https://precisemath.github.io/tags/environmental/</link>
     <description>Recent content in environmental on Thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 03 Jul 2020 22:55:53 -0400</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/environmental/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://precisemath.github.io/tags/environmental/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Death of a Squirrel</title>
-      <link>http://example.org/posts/first-post/</link>
+      <link>https://precisemath.github.io/posts/first-post/</link>
       <pubDate>Fri, 03 Jul 2020 22:55:53 -0400</pubDate>
       
-      <guid>http://example.org/posts/first-post/</guid>
+      <guid>https://precisemath.github.io/posts/first-post/</guid>
       <description>&lt;p&gt;Something I feel bad about.&lt;/p&gt;</description>
     </item>
     
