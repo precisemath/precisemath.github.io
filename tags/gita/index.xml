@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Thoughts</title>
-    <link>https://precisemath.github.io/posts/</link>
-    <description>Recent content in Posts on Thoughts</description>
+    <title>gita on Thoughts</title>
+    <link>https://precisemath.github.io/tags/gita/</link>
+    <description>Recent content in gita on Thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Jul 2020 22:19:22 -0400</lastBuildDate>
     
-	<atom:link href="https://precisemath.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://precisemath.github.io/tags/gita/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>https://precisemath.github.io/posts/bhagwad-gita-one-sentence/</guid>
       <description>&lt;p&gt;Essence of the Bhagwad Gita as one sentence per chapter&lt;/p&gt;
 &lt;p&gt;(Not my own. Got it from a Whatsapp forward).&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Death of a Squirrel</title>
-      <link>https://precisemath.github.io/posts/first-post/</link>
-      <pubDate>Fri, 03 Jul 2020 22:55:53 -0400</pubDate>
-      
-      <guid>https://precisemath.github.io/posts/first-post/</guid>
-      <description>&lt;p&gt;Something I feel bad about.&lt;/p&gt;</description>
     </item>
     
   </channel>
