@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jul 2020 22:19:22 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 22:42:07 -0400</lastBuildDate>
     
 	<atom:link href="https://precisemath.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>books</title>
+      <link>https://precisemath.github.io/tags/books/</link>
+      <pubDate>Wed, 08 Jul 2020 22:42:07 -0400</pubDate>
+      
+      <guid>https://precisemath.github.io/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fiction</title>
+      <link>https://precisemath.github.io/tags/fiction/</link>
+      <pubDate>Wed, 08 Jul 2020 22:42:07 -0400</pubDate>
+      
+      <guid>https://precisemath.github.io/tags/fiction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>non-fiction</title>
+      <link>https://precisemath.github.io/tags/non-fiction/</link>
+      <pubDate>Wed, 08 Jul 2020 22:42:07 -0400</pubDate>
+      
+      <guid>https://precisemath.github.io/tags/non-fiction/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>bhagwad-gita</title>
