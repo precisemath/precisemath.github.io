@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <title>A Quick Practical Overview of Cosmos Db | Thoughts</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF3DB4">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    
+    
+    <link rel="stylesheet" href="https://precisemath.github.io/css/main.min.975b1911c008aee6ab5fb42e51274b8268ebcb65dc15bd4a5f69b9eedb485c3e.css"/>
+
+    
+    
+    
+
+    
+    
+ 
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-171828673-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+</head>
+
+    <body>
+        
+<nav>
+  <header>
+    <div class="site-title">
+        <a href="/">Thoughts</a>
+    </div>  
+</header>
+
+  <div class="nav-menu">
+  
+    <a class="color-link nav-link" href="/about/">About</a>
+  
+    <a class="color-link nav-link" href="/books/">Books I Love</a>
+  
+    <a class="color-link nav-link" href="/kotlin-notes/">Kotlin Notes</a>
+  
+  <a class="color-link nav-link" href="https://precisemath.github.io/index.xml" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
+</div>
+<footer class="footer">
+	<div class="social-icons">
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+
+	<script src="https://precisemath.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+</footer>
+</nav>
+
+        <div id="content" class="content-container">
+        
+
+<h1 class="post-title">A Quick Practical Overview of Cosmos Db</h1>
+    
+    <time>November 8, 2020</time>
+    
+    <div>
+        <p>
+        <p>Before Cosmos DB, my world was a SQL Relational World; that is to say, I have designed plenty of normalized Databases for projects of varying sizes. However, for the latest project that I have been working on, my team and I decided to go with Cosmos DB, which is a No-SQL Document Database. Every No-SQL Document-based DB out there has its nuances; this is no different from Cosmos DB.</p>
+<p>It took me a lot of hands-on coding and reading the documentation to figure out all the features and nuances of Cosmos DB to design a correct and scalable schema and data-structure that the team has been using for our system.</p>
+<p>In this blog post, I am going through the pain of documenting my findings so that others may go through this cheat sheet and save a lot of time and energy.</p>
+<h2 id="selection-of-a-partition-key">Selection of a partition key</h2>
+<p>Perhaps the most important aspect in the design of a Cosmos DB Schema is the partition key itself. This partition key will “break” your collection into logical partitions.</p>
+<p>Where do I begin with this one? There is a lot of documentation about choosing the partition key.</p>
+<p>I will summarize and encapsulate some of that below:</p>
+<ul>
+<li>It should have a wide range of values.</li>
+<li>It’s a commonly used parameter while accessing documents in the collection.</li>
+</ul>
+<h3 id="example">Example</h3>
+<p>Let us get into some examples because that&rsquo;s the best way to understand this.</p>
+<p>I have a collection which tracks the orders or purchases of user/s.
+Any access/query pattern into our collection will, for sure, have an UserId associated with it.</p>
+<p>We create a new document every time a User places a new Order.
+We used UserId as our partition key.</p>
+<h3 id="things-to-look-out-for">Things to look out for</h3>
+<ul>
+<li>The partition key is selected at the time of the creation of the collection. It cannot be changed later, not without redoing the whole collection.</li>
+<li>Regardless of what the documentation tells you, it will be best for you to choose a String value as the partition key.</li>
+<li>Each logical partition has a max size of 20 GB.</li>
+</ul>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/partition-data">https://docs.microsoft.com/en-us/azure/cosmos-db/partition-data</a></li>
+<li><a href="https://github.com/Azure/azure-sdk-for-java/issues/14485">https://github.com/Azure/azure-sdk-for-java/issues/14485</a></li>
+<li><a href="https://www.youtube.com/watch?v=9v6WbCOzPiM">https://www.youtube.com/watch?v=9v6WbCOzPiM</a> (Azure Cosmos DB Partition Key Advisor – In case you have your data setup already!)</li>
+</ul>
+<h2 id="using-the-id-field">Using the “id” field</h2>
+<p>Every document in a Cosmos DB Collection needs to have this “id” field.
+This id is unique for every document within the logical partition.</p>
+<h3 id="things-to-look-out-for-1">Things to look out for</h3>
+<ul>
+<li>id is a String field.</li>
+</ul>
+<p>Contrary to popular belief, this field is NOT the unique identifier for any document in the collection!</p>
+<p>The unique identifier for a document is a combination of both the id field and partition key value.</p>
+<ul>
+<li>Multiple documents can have the same id as long as they are in different partitions!</li>
+</ul>
+<h2 id="unique-key-policy">Unique Key Policy</h2>
+<p>A unique key constraint can be set up in the scope of every logical partition.
+Cosmos DB provides the flexibility to implement some complex, unique key policies.</p>
+<h3 id="things-to-look-out-for-2">Things to look out for</h3>
+<ul>
+<li>RU (Request Unit) charges are higher when a unique id policy is a setup for Create/Update operations.</li>
+<li>Just like the partition key cannot be changed once it’s setup, the unique key policy cannot be changed either.</li>
+</ul>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/unique-keys">https://docs.microsoft.com/en-us/azure/cosmos-db/unique-keys</a></li>
+</ul>
+<h2 id="some-max-numbers-in-cosmos-db">Some Max Numbers in Cosmos DB</h2>
+<ul>
+<li>Max size of a document: 2 MB</li>
+<li>Max Length of a partition key value: 2048 bytes</li>
+<li>Max length of an id value: 1023 bytes</li>
+<li>Max storage across all documents in a logical partition: 20 GB</li>
+</ul>
+<h3 id="reference-1">Reference</h3>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/concepts-limits">https://docs.microsoft.com/en-us/azure/cosmos-db/concepts-limits</a></li>
+</ul>
+<h2 id="handling-concurrent-writing">Handling Concurrent Writing</h2>
+<p>(Plain English: Situation where multiple writers updating one document at the same time)</p>
+<p>Concurrency is when multiple writers are trying to update the same document in a collection.
+Relational Databases handle this situation with locking i.e. you can lock the row or the table that is being updated until the transaction is completed.</p>
+<p>Unfortunately, there is no locking facility provided by Cosmos DB.
+Cosmos DB instead provides an optimistic concurrency control to control access to its documents.</p>
+<p>Every document has an “_etag” key that is auto-generated. This key is equivalent to a version number of a document.
+Writers can control access to the document by using this key.</p>
+<h3 id="for-example">For Example:</h3>
+<p>There are two writers who want to update the same document almost at the same time.</p>
+<p>Partial updates of the document are NOT possible in Cosmos DB. The only way is to read the entire document into memory. Update the document (in-memory) and save it to the DB.</p>
+<h3 id="without-optimistic-concurrency-control-causes-information-loss">Without Optimistic Concurrency Control (Causes Information Loss)</h3>
+<ol>
+<li>Writer 1 reads the document.</li>
+<li>Writer 2 reads the document.</li>
+<li>Writer 1 updates the document (in-memory) and saves it to the DB.</li>
+<li>Writer 2 updates the document (in-memory) and saves it to the DB, thereby losing all of writer 1’s updates.</li>
+</ol>
+<h3 id="with-optimistic-concurrency-control-no-information-lost">With Optimistic Concurrency Control (No Information Lost)</h3>
+<ol>
+<li>Writer 1 reads the document.</li>
+<li>Writer 2 reads the document.</li>
+<li>Writer 1 updates the document (in-memory) and saves it to the DB (Cosmos DB updates the “_etag” value with every update of the document).</li>
+<li>Writer 2 updates the document (in-memory) and saves it to the DB along with “ItemRequestOptions” set with “setIfMatchETag(eTag)” option.
+The document update fails as the “_etag” has been updated</li>
+<li>Writer 2 reads the document again.</li>
+<li>Writer 2 updates the document from Step 5 (in-memory) saves it to the DB along with the new “_etag”.</li>
+</ol>
+<h3 id="things-to-look-out-for-3">Things to look out for</h3>
+<ul>
+<li>Your document structure might need an _etag field.</li>
+</ul>
+<h3 id="reference-2">Reference</h3>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/database-transactions-optimistic-concurrency">https://docs.microsoft.com/en-us/azure/cosmos-db/database-transactions-optimistic-concurrency</a></li>
+</ul>
+<h2 id="transactions">Transactions</h2>
+<p>First, I would like to provide some context about the Transactions term for people not from the SQL world.</p>
+<p>Let us say that multiple operations can be executed in a batch; even if one operation fails in the batch of operations that was executed, then all the operations that were executed previously in the batch are “rolled” back as if they were never executed and the batch execution is canceled.</p>
+<p>Transactions are possible within the items of a logical partition. It is not possible to execute transactions across items located in multiple partitions.</p>
+<p>You can achieve transactions in Cosmos DB using Stored Procedures, which are written in Javascript.</p>
+<h3 id="reference-3">Reference</h3>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/cosmos-db/database-transactions-optimistic-concurrency">https://docs.microsoft.com/en-us/azure/cosmos-db/database-transactions-optimistic-concurrency</a></li>
+</ul>
+<h2 id="some-more-useful-concepts">Some more useful concepts</h2>
+<ul>
+<li>Server-side programming</li>
+<li>Triggers – Pre and Post</li>
+<li>Stored Procedures</li>
+<li>User-Defined Functions</li>
+<li>Time to live for a document</li>
+<li>Change Feed Processor</li>
+</ul>
+<h2 id="notes-for-kotlin-developers">Notes for Kotlin Developers</h2>
+<p>As of today, Microsoft has a Java SDK (v4) available to use Cosmos DB. The biggest problem Kotlin developers will face using this SDK is Serialization, especially when they use Kotlin specific data structures like sealed classes.</p>
+<p>Internally the Java SDK performs Serialization and Deserialization uses the Jackson library. Currently, there is no way to specify your own serialization and de-serialization mechanism in the Java SDK (you can specify your own serialization mechanism in the .NET SDK!). There is, however, a workaround. The workaround is as follows:</p>
+<h3 id="serialization">Serialization</h3>
+<ol>
+<li>Serialize your data structure using your favorite Kotlin Serializer (we use Kotlinx) into a JSON String.</li>
+<li>From a JSON String convert into a JSON Node (Jackson Serializer).</li>
+</ol>
+<h3 id="de-serialization">De-serialization</h3>
+<ol>
+<li>Specify that you want the type of your data structure to be JSON Node.</li>
+<li>Convert from JSON Node to a JSON String (Using the Jackson Serializer).</li>
+<li>Convert from JSON String to the specified type using your favorite Serializer (We used Kotlinx).</li>
+</ol>
+        </p>
+    </div>
+    
+
+    
+
+    <div class="page-footer">
+        
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/azure">#azure</a>
+        
+            <a class="tag" href="/tags/cosmos-db">#cosmos-db</a>
+        
+            <a class="tag" href="/tags/cosmosdb">#cosmosdb</a>
+        
+            <a class="tag" href="/tags/cosmos">#cosmos</a>
+        
+            <a class="tag" href="/tags/tutorial">#tutorial</a>
+        
+      
+    </div>
+
+
+        
+        </div>
+        <footer class="footer-mobile">
+	<div class="social-icons">
+        
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<div class="footer-mobile-links">
+		<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+		<span class="divider-bar">|</span>
+		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+	</div>
+
+	<script src="https://precisemath.github.io/js/main.min.fa5c2b23e07b5d9bfad267a52b4b24fdb053e6fb7524993383594926a3ac270c.js" integrity="sha256-+lwrI+B7XZv60melK0sk/bBT5vt1JJkzg1lJJqOsJww=" crossorigin="anonymous"></script>
+</footer>
+    </body>
+</html>

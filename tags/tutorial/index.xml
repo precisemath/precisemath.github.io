@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Thoughts</title>
-    <link>https://precisemath.github.io/posts/</link>
-    <description>Recent content in Posts on Thoughts</description>
+    <title>tutorial on Thoughts</title>
+    <link>https://precisemath.github.io/tags/tutorial/</link>
+    <description>Recent content in tutorial on Thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 08 Nov 2020 23:00:21 -0500</lastBuildDate>
     
-	<atom:link href="https://precisemath.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://precisemath.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,34 +20,6 @@
       <description>&lt;p&gt;Before Cosmos DB, my world was a SQL Relational World; that is to say, I have designed plenty of normalized Databases for projects of varying sizes. However, for the latest project that I have been working on, my team and I decided to go with Cosmos DB, which is a No-SQL Document Database. Every No-SQL Document-based DB out there has its nuances; this is no different from Cosmos DB.&lt;/p&gt;
 &lt;p&gt;It took me a lot of hands-on coding and reading the documentation to figure out all the features and nuances of Cosmos DB to design a correct and scalable schema and data-structure that the team has been using for our system.&lt;/p&gt;
 &lt;p&gt;In this blog post, I am going through the pain of documenting my findings so that others may go through this cheat sheet and save a lot of time and energy.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Indian Languages</title>
-      <link>https://precisemath.github.io/posts/indian-languages/</link>
-      <pubDate>Fri, 10 Jul 2020 22:51:43 -0400</pubDate>
-      
-      <guid>https://precisemath.github.io/posts/indian-languages/</guid>
-      <description>&lt;p&gt;Learnt something new today.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Bhagwad Gita One Sentence</title>
-      <link>https://precisemath.github.io/posts/bhagwad-gita-one-sentence/</link>
-      <pubDate>Tue, 07 Jul 2020 22:19:22 -0400</pubDate>
-      
-      <guid>https://precisemath.github.io/posts/bhagwad-gita-one-sentence/</guid>
-      <description>&lt;p&gt;Essence of the Bhagwad Gita as one sentence per chapter&lt;/p&gt;
-&lt;p&gt;(Not my own. Got it from a Whatsapp forward).&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Death of a Squirrel</title>
-      <link>https://precisemath.github.io/posts/first-post/</link>
-      <pubDate>Fri, 03 Jul 2020 22:55:53 -0400</pubDate>
-      
-      <guid>https://precisemath.github.io/posts/first-post/</guid>
-      <description>&lt;p&gt;Something I feel bad about.&lt;/p&gt;</description>
     </item>
     
   </channel>

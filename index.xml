@@ -6,10 +6,21 @@
     <description>Recent content on Thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2020 22:51:43 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2020 23:00:21 -0500</lastBuildDate>
     
 	<atom:link href="https://precisemath.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A Quick Practical Overview of Cosmos Db</title>
+      <link>https://precisemath.github.io/posts/a-quick-practical-overview-cosmos-db/</link>
+      <pubDate>Sun, 08 Nov 2020 23:00:21 -0500</pubDate>
+      
+      <guid>https://precisemath.github.io/posts/a-quick-practical-overview-cosmos-db/</guid>
+      <description>&lt;p&gt;Before Cosmos DB, my world was a SQL Relational World; that is to say, I have designed plenty of normalized Databases for projects of varying sizes. However, for the latest project that I have been working on, my team and I decided to go with Cosmos DB, which is a No-SQL Document Database. Every No-SQL Document-based DB out there has its nuances; this is no different from Cosmos DB.&lt;/p&gt;
+&lt;p&gt;It took me a lot of hands-on coding and reading the documentation to figure out all the features and nuances of Cosmos DB to design a correct and scalable schema and data-structure that the team has been using for our system.&lt;/p&gt;
+&lt;p&gt;In this blog post, I am going through the pain of documenting my findings so that others may go through this cheat sheet and save a lot of time and energy.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Kotlin Notes</title>
